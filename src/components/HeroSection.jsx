@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 export default function HeroSection() {
   const [statusHovered, setStatusHovered] = useState(false);
   const blobRef = useRef(null);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -14,8 +15,9 @@ export default function HeroSection() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+
   return (
-    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-white">
+    <section ref={sectionRef} className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-white">
 
       {/* Cursor color blob */}
       <div
@@ -34,7 +36,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Main content */}
+{/* Main content */}
       <div className="w-full pl-6 md:pl-24 lg:pl-36 pr-4 md:pr-16 lg:pr-24 pt-28 pb-10 flex flex-col justify-between min-h-screen">
 
         {/* Name + Portrait row — stacks on mobile, side-by-side on md+ */}
@@ -108,6 +110,7 @@ export default function HeroSection() {
                 <p className="text-sm font-semibold text-gray-900">Open to work</p>
               </div>
             </div>
+
           </div>
 
           {/* Right: Polaroid cards — hidden on mobile, shown on md+ */}
