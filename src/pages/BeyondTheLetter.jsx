@@ -138,15 +138,17 @@ export default function BeyondTheLetter() {
   return (
     <div className="text-gray-900 font-sans antialiased bg-white min-h-screen">
       <style>{`
-        @keyframes finalFloat {
-          0%, 100% { transform: translateY(0px) rotate(-0.5deg); box-shadow: 0 12px 36px rgba(0,0,0,0.15), 0 0 0 0 rgba(241,122,126,0); }
-          50%       { transform: translateY(-8px) rotate(0.5deg);  box-shadow: 0 24px 48px rgba(0,0,0,0.18), 0 0 32px 4px rgba(241,122,126,0.18); }
-        }
         .final-cover {
-          animation: finalFloat 4s ease-in-out infinite;
           border-radius: 0.8rem;
           width: 100%;
           display: block;
+          box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+          transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+          cursor: zoom-in;
+        }
+        .final-cover:hover {
+          transform: scale(1.06);
+          box-shadow: 0 24px 56px rgba(0,0,0,0.22);
         }
       `}</style>
       <CustomCursor />
