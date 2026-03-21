@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: 'Inter', sans-serif;
+  --font-family-serif: 'Cormorant Garamond', serif;
+  --color-brand-purple: #8B5CF6;
+  --color-brand-purple-light: #E9D5FF;
+  --color-brand-purple-dark: #6D28D9;
+  --color-brand-green: #A3E635;
+  --color-brand-blue: #93C5FD;
+  --color-brand-dark: #111111;
+  --color-brand-gray: #F9FAFB;
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes marquee-up {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes marquee-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0%); }
+}
+
+@keyframes colorShift {
+  0%, 100% { color: #F9A66C; border-color: #F9A66C; }
+  50% { color: #F17A7E; border-color: #F17A7E; }
+}
+
+.animate-color-shift {
+  animation: colorShift 3s ease-in-out infinite;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.animate-color-shift:hover {
+  background: linear-gradient(135deg, #F9A66C, #F17A7E) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 0 20px rgba(249, 166, 108, 0.5) !important;
+  animation-play-state: paused;
+}
+
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(18px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+
+.animate-wipe-reveal {
+  display: block;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.animate-wipe-reveal-2 {
+  display: block;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-12px) translateX(6px); }
+  66% { transform: translateY(8px) translateX(-4px); }
+}
+
+.animate-marquee-up {
+  animation: marquee-up 18s linear infinite;
+}
+
+.animate-marquee-down {
+  animation: marquee-down 22s linear infinite;
+}
+
+.animate-drift {
+  animation: drift 7s ease-in-out infinite;
+}
+
+body {
+  cursor: none;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+}
+
+#cursor-dot,
+#cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  transition: opacity 0.2s;
+}
+#cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+body.hovering-link #cursor-dot {
+  opacity: 0;
+}
+
+body.hovering-link #cursor-outline {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+.glitch-char {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s;
+}
+.hero-text:hover .glitch-char:nth-child(odd) {
+  transform: translateY(-4px) rotate(-2deg);
+  color: #F9A66C;
+}
+.hero-text:hover .glitch-char:nth-child(even) {
+  transform: translateY(4px) rotate(2deg);
+  color: #F17A7E;
+}
+
+.accordion-content {
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.accordion-item.active .accordion-content {
+  opacity: 1;
+}
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #8B5CF6;
+  color: white;
+}
+
+/* ─── Mobile Responsive Utilities ─────────────────────────── */
+
+/* Folder stage height */
+.folder-stage-height {
+  height: 500px;
+}
+
+/* Two-folder row */
+.folders-row {
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  /* Folder: scale down the fixed-size stage */
+  .folder-stage-wrapper {
+    transform: scale(0.52);
+    transform-origin: center top;
+    margin-bottom: -200px;
+  }
+
+  .folder-stage-wrapper-exp {
+    transform: scale(0.52);
+    transform-origin: center top;
+    margin-bottom: -200px;
+  }
+
+  .folders-row {
+    align-items: center;
+  }
+
+  .folder-stage-height {
+    height: 360px;
+  }
+
+  /* FAQ: single column on mobile */
+  .faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* FAQ: remove sticky on mobile */
+  .faq-sticky-col {
+    position: static !important;
+  }
+
+  /* Footer top: single column on mobile */
+  .footer-top-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Custom cursor hidden on touch devices */
+  #cursor-dot,
+  #cursor-outline {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  /* ── Mobile font-size reductions ── */
+
+  /* Services section body text */
+  .text-lg {
+    font-size: 0.88rem !important;
+    line-height: 1.7 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small: scale folder even smaller */
+  .folder-stage-wrapper {
+    transform: scale(0.42);
+    transform-origin: center top;
+    margin-bottom: -240px;
+  }
+
+  .folder-stage-wrapper-exp {
+    transform: scale(0.42);
+    transform-origin: center top;
+    margin-bottom: -240px;
+  }
+
+  .folder-stage-height {
+    height: 300px;
+  }
+}
