@@ -22,40 +22,41 @@ const certifications = [
 // Each skill/tool maps to the projects that used it
 const skillProjects = {
   'User Interface Design':  ['EchoTouch', 'Work+'],
-  'Graphic Design':  ['Suroskie Beauty', 'Every Girl, A Bright Future', 'Beyond The Letter'],
+  'Graphic Design':  ['Suroskie Beauty', 'Every Girl, A Bright Future', 'Beyond The Letter', 'GIT Creative Agency'],
   'Wireframing':     ['EchoTouch'],
   'Photo Editing':   ['Suroskie Beauty', 'Work+', 'Beyond The Letter'],
   'User Flows':      ['EchoTouch'],
-  'Visual Design':   ['Suroskie Beauty', 'Beyond The Letter', 'Work+', 'Every Girl, A Bright Future'],
+  'Visual Design':   ['Suroskie Beauty', 'Beyond The Letter', 'Work+', 'Every Girl, A Bright Future', 'GIT Creative Agency'],
   'Storyboarding':   ['Every Girl, A Bright Future'],
   'Accessibility':   ['EchoTouch'],
   'User Research':   ['EchoTouch', 'Every Girl, A Bright Future'],
-  'Communication':   ['Every Girl, A Bright Future', 'Work+', 'Suroskie Beauty'],
-  'Typography':      ['Beyond The Letter', 'Work+', 'Every Girl, A Bright Future'],
-  'Composition':     ['Beyond The Letter', 'Suroskie Beauty', 'Every Girl, A Bright Future'],
-  'Collaborative':   ['Work+', 'Suroskie Beauty'],
-  'Creative':        ['EchoTouch', 'Suroskie Beauty', 'Beyond The Letter', 'Every Girl, A Bright Future', 'Work+'],
-  'Detail-Oriented': ['EchoTouch', 'Beyond The Letter', 'Every Girl, A Bright Future'],
+  'Communication':   ['Every Girl, A Bright Future', 'Work+', 'Suroskie Beauty', 'GIT Creative Agency'],
+  'Typography':      ['Beyond The Letter', 'Work+', 'Every Girl, A Bright Future', 'GIT Creative Agency'],
+  'Composition':     ['Beyond The Letter', 'Suroskie Beauty', 'Every Girl, A Bright Future', 'GIT Creative Agency'],
+  'Collaborative':   ['Work+', 'Suroskie Beauty', 'GIT Creative Agency'],
+  'Creative':        ['EchoTouch', 'Suroskie Beauty', 'Beyond The Letter', 'Every Girl, A Bright Future', 'Work+', 'GIT Creative Agency'],
+  'Detail-Oriented': ['EchoTouch', 'Beyond The Letter', 'Every Girl, A Bright Future', 'GIT Creative Agency'],
 };
 
 const toolProjects = {
-  'Figma':                 ['EchoTouch', 'Work+'],
-  'Adobe Illustrator':     ['Suroskie Beauty', 'Beyond The Letter', 'Every Girl, A Bright Future', 'Work+'],
+  'Figma':                 ['EchoTouch', 'Work+', 'GIT Creative Agency'],
+  'Adobe Illustrator':     ['Suroskie Beauty', 'Beyond The Letter', 'Every Girl, A Bright Future', 'Work+', 'GIT Creative Agency'],
   'Adobe Photoshop':       ['Suroskie Beauty', 'Work+'],
-  'Adobe InDesign':        ['Beyond The Letter'],
+  'Adobe InDesign':        ['Beyond The Letter', 'GIT Creative Agency'],
   'Adobe After Effects':   ['EchoTouch'],
   'Miro Board':            ['Work+'],
   'Monday Board':          ['Work+'],
-  'Slack':                 ['Work+'],
+  'Slack':                 ['Work+', 'GIT Creative Agency'],
 };
 
 // Project accent colours for the pill badges in tooltip
 const projectColor = {
-  'EchoTouch':          '#667eea',
-  'Work+':              '#8B5CF6',
-  'Every Girl, A Bright Future':         '#2c5364',
-  'Suroskie Beauty':    '#F9A66C',
-  'Beyond The Letter':  '#F17A7E',
+  'EchoTouch':             '#667eea',
+  'Work+':                 '#8B5CF6',
+  'Every Girl, A Bright Future': '#2c5364',
+  'Suroskie Beauty':       '#F9A66C',
+  'Beyond The Letter':     '#F17A7E',
+  'GIT Creative Agency':   '#4a7c59',
 };
 
 function SkillTag({ label, projects }) {
