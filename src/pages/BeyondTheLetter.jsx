@@ -553,6 +553,62 @@ export default function BeyondTheLetter() {
           </div>
         </div>
 
+        {/* ── Craig Ward Noticed ── */}
+        <div className="px-6 md:px-20 max-w-5xl mx-auto mb-20">
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <p style={{ fontFamily: '"Caveat", cursive', fontSize: 'clamp(22px, 3vw, 30px)', color: accent, marginBottom: 8 }}>
+              and then something unexpected happened ✦
+            </p>
+            <p style={{ color: '#888', fontSize: 'clamp(14px, 1.8vw, 16px)', lineHeight: 1.7, maxWidth: '60ch', margin: '0 auto' }}>
+              I posted my magazine on LinkedIn — and Craig Ward himself saw it. He commented on my post and even reached out in a personal DM.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', gap: '32px', justifyContent: 'center', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+            {/* LinkedIn Comment */}
+            <div style={{
+              background: '#fff',
+              borderRadius: '4px',
+              padding: '16px 16px 48px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.13)',
+              transform: 'rotate(-2.5deg)',
+              maxWidth: '320px',
+              width: '100%',
+              transition: 'transform 0.35s cubic-bezier(0.34,1.56,0.64,1)',
+              cursor: 'default',
+            }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1.04)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'rotate(-2.5deg)'}
+            >
+              <img src="/craig1.png" alt="Craig Ward LinkedIn comment" style={{ width: '100%', display: 'block', borderRadius: '2px' }} />
+              <p style={{ fontFamily: '"Caveat", cursive', fontSize: 17, color: '#888', textAlign: 'center', marginTop: 16, lineHeight: 1.4 }}>
+                his comment on my LinkedIn post
+              </p>
+            </div>
+
+            {/* Personal DM */}
+            <div style={{
+              background: '#fff',
+              borderRadius: '4px',
+              padding: '16px 16px 48px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.13)',
+              transform: 'rotate(2deg)',
+              maxWidth: '320px',
+              width: '100%',
+              transition: 'transform 0.35s cubic-bezier(0.34,1.56,0.64,1)',
+              cursor: 'default',
+            }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1.04)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'rotate(2deg)'}
+            >
+              <img src="/craig2.png" alt="Craig Ward personal DM" style={{ width: '100%', display: 'block', borderRadius: '2px' }} />
+              <p style={{ fontFamily: '"Caveat", cursive', fontSize: 17, color: '#888', textAlign: 'center', marginTop: 16, lineHeight: 1.4 }}>
+                he even texted me personally
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* ── Back ── */}
         <div className="px-6 md:px-20 max-w-5xl mx-auto pt-10 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4">
           <a href="/#work" className="interactive inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-gray-900 transition-colors">
