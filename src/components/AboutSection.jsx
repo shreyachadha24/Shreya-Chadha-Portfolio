@@ -55,7 +55,7 @@ const experiences = [
   {
     title: 'Work+',
     category: 'Visual Design · University',
-    year: '2025',
+    year: '2026',
     num: '02',
     textColor: '#fff',
     bg: 'linear-gradient(145deg, #8B5CF6 0%, #a78bfa 100%)',

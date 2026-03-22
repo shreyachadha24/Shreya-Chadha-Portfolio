@@ -100,7 +100,7 @@ export default function CreativeAgency() {
           }}>
             <div>
               <SectionLabel>Timeline</SectionLabel>
-              <p className="text-gray-700 font-medium" style={{ fontSize: 15 }}>4 Weeks</p>
+              <p className="text-gray-700 font-medium" style={{ fontSize: 15 }}>6 Weeks</p>
             </div>
             <div>
               <SectionLabel>My Roles</SectionLabel>
@@ -135,7 +135,7 @@ export default function CreativeAgency() {
             </div>
             <div style={{ color: '#666', fontSize: 'clamp(14px, 2vw, 16px)', lineHeight: 1.9 }}>
               <p style={{ marginBottom: 20 }}>
-                Over 7 weeks, our team of 5 developed 6 deliverables for TEDxFaurotPark — ranging from social media
+                Over 6 weeks, our team of 5 developed 6 deliverables for TEDxFaurotPark — ranging from social media
                 graphics to print and video assets — building a full brand system and design guidelines along the way.
               </p>
               <p>
@@ -224,7 +224,7 @@ export default function CreativeAgency() {
           <h2 className="font-bold text-gray-900 mb-8" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)' }}>
             6 Deliverables in{' '}
             <em style={{ fontFamily: "'Cormorant Garamond', serif", color: accent, fontStyle: 'italic', fontWeight: 400 }}>
-              4 Weeks
+              6 Weeks
             </em>
           </h2>
           <div className="flex flex-wrap gap-3">
