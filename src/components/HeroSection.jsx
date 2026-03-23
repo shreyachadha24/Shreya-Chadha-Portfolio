@@ -80,7 +80,7 @@ export default function HeroSection() {
               and always up for turning ideas into beautiful, user-friendly magic.
             </p>
 
-            <p className="mt-3 text-gray-500 text-sm tracking-wide">Based in United States</p>
+            <p className="mt-3 text-gray-500 text-sm tracking-wide">Based in the United States</p>
 
             {/* Status badge — inline below bio */}
             <div
