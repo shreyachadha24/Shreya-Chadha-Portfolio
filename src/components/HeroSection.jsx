@@ -108,6 +108,7 @@ export default function HeroSection() {
               <div>
                 <p className="text-[10px] font-semibold tracking-[0.2em] text-gray-400 uppercase">Status</p>
                 <p className="text-sm font-semibold text-gray-900">Open to work</p>
+                <p className="text-xs text-gray-400 mt-0.5">internships & co-ops</p>
               </div>
             </div>
 

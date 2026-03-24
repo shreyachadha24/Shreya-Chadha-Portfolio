@@ -1,17 +1,19 @@
 const items = [
-  { text: "Designing today, probably rearranging my workspace tomorrow.", type: "normal", icon: "🎨" },
+  { text: "Figma", type: "tags" },
   { text: "✦", type: "sep" },
-  { text: "branding  ·  UI/UX  ·  editorial  ·  campaigns  ·  visual", type: "tags", icon: "💼" },
+  { text: "Adobe Illustrator", type: "tags" },
   { text: "✦", type: "sep" },
-  { text: "turning ideas into beautiful, user-friendly magic.", type: "normal", icon: "✨" },
+  { text: "Adobe InDesign", type: "tags" },
   { text: "✦", type: "sep" },
-  { text: "Arizona State University  ·  Masters in User Experience", type: "tags", icon: "🎓" },
+  { text: "Adobe Photoshop", type: "tags" },
   { text: "✦", type: "sep" },
-  { text: "open to internships & co-op", type: "highlight", icon: "👋" },
+  { text: "Adobe After Effects", type: "tags" },
   { text: "✦", type: "sep" },
-  { text: "Figma  ·  Illustrator  ·  InDesign  ·  Photoshop", type: "tags", icon: "🖥️" },
+  { text: "Miro", type: "tags" },
   { text: "✦", type: "sep" },
-  { text: "design with empathy, ship with intention.", type: "normal", icon: "💡" },
+  { text: "Notion", type: "tags" },
+  { text: "✦", type: "sep" },
+  { text: "Microsoft Office", type: "tags" },
   { text: "✦", type: "sep" },
 ];
 
@@ -21,9 +23,8 @@ const renderItem = (item, key) => {
   }
   if (item.type === "tags") {
     return (
-      <span key={key} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, flexShrink: 0, whiteSpace: 'nowrap' }}>
-        <span style={{ fontSize: 14 }}>{item.icon}</span>
-        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c8c0b8' }}>{item.text}</span>
+      <span key={key} style={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0, whiteSpace: 'nowrap' }}>
+        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', background: 'linear-gradient(90deg, #F9A66C, #F17A7E)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{item.text}</span>
       </span>
     );
   }
