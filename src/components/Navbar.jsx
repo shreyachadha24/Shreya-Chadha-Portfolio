@@ -1,5 +1,42 @@
 import { useState, useEffect } from 'react';
 
+function NavLink({ href, children, external }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      className="interactive"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        position: 'relative',
+        fontSize: 14,
+        fontWeight: 500,
+        color: hovered ? '#1a1a1a' : '#555',
+        textDecoration: 'none',
+        padding: '5px 10px',
+        borderRadius: 20,
+        transition: 'color 0.2s ease',
+        display: 'inline-block',
+      }}
+    >
+      <span style={{
+        position: 'absolute',
+        inset: 0,
+        borderRadius: 20,
+        background: 'linear-gradient(135deg, #F9A66C, #F17A7E)',
+        opacity: hovered ? 0.12 : 0,
+        transform: hovered ? 'scaleX(1) scaleY(1)' : 'scaleX(0.6) scaleY(0.6)',
+        transition: 'opacity 0.25s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1)',
+        pointerEvents: 'none',
+      }} />
+      {children}
+    </a>
+  );
+}
+
 export default function Navbar() {
   const [hovered, setHovered] = useState(false);
   const [pulse, setPulse] = useState(false);
@@ -58,10 +95,14 @@ export default function Navbar() {
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-10">
-          <a href="#work" className="text-sm font-medium text-gray-700 hover:text-black transition-colors interactive">Work</a>
-          <a href="#about" className="text-sm font-medium text-gray-700 hover:text-black transition-colors interactive">About</a>
-          <a href="#contact" className="text-sm font-medium text-gray-700 hover:text-black transition-colors interactive">Contact</a>
-          <a href="https://drive.google.com/file/d/1PsiuPIW2kGmcEmROzFlXNLgzRwYn20Xf/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-700 hover:text-black transition-colors interactive">Resume</a>
+          {[
+            { label: 'Work', href: '#work' },
+            { label: 'About', href: '#about' },
+            { label: 'Contact', href: '#contact' },
+            { label: 'Resume ↗', href: 'https://drive.google.com/file/d/1PsiuPIW2kGmcEmROzFlXNLgzRwYn20Xf/view?usp=sharing', external: true },
+          ].map((link) => (
+            <NavLink key={link.label} href={link.href} external={link.external}>{link.label}</NavLink>
+          ))}
         </div>
 
         {/* Hamburger button — mobile only */}
